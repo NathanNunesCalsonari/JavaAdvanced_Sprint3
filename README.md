@@ -40,14 +40,14 @@ Vale mencionar também que houve uma mudança no banco de dados e os diagramas d
 ![image](https://github.com/NathanNunesCalsonari/JavaAdvanced_Sprint2/assets/130010914/4b612fc8-8035-4ee5-b3b9-03d147687718)
 
 # Endpoints:
-GET /empresa/listar
-GET /empresa/{id}
-POST /empresa/cadastrar
-PUT /empresa/{id}
-DELETE /empresa/{id}
+° GET /empresa/listar
+° GET /empresa/{id}
+° POST /empresa/cadastrar
+° PUT /empresa/{id}
+° DELETE /empresa/{id}
 
-GET /produto/listar
-GET /produto/{id}
-POST /produto/cadastrar
-PUT /produto/{id}
-DELETE /produto/{id}
+° GET /produto/listar
+° GET /produto/{id}
+° POST /produto/cadastrar
+° PUT /produto/{id}
+° DELETE /produto/{id}
