@@ -19,7 +19,7 @@
 # Instruções de Execução
 Para executar o programa, é necessário ter o Intellij ou Eclipse instalado em seu computador. Em seguida, precisa carregar as dependências e depois é necessário fazer os testes ou em algum navegador ou no postman
 
-Em seguida, precisa selecionar qual método vai querer, GET, SET, PUT, DELETE
+Em seguida, precisa selecionar qual método vai querer, GET, POST, PUT, DELETE
 
 # Vídeo de Apresentação
 Assista ao vídeo de apresentação da proposta tecnológica, público-alvo e problemas que a aplicação se propõe a solucionar aqui: https://www.youtube.com/watch?v=TsUd9z82e2E.
