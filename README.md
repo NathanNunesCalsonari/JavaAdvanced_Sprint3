@@ -1,6 +1,5 @@
 # DataTech
-Integrantes do Grupo:
-Grupo:
+**Integrantes do Grupo:**
 
 **Nome Completo:** Ana Paula Nascimento Silva- rm552513
 **Responsabilidade no Projeto:** criação do controller , cronograma;
