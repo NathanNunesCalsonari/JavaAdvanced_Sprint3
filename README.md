@@ -2,20 +2,20 @@
 Integrantes do Grupo:
 Grupo:
 
-*Nome Completo:* Ana Paula Nascimento Silva- rm552513
-*Responsabilidade no Projeto:* criação do controller , cronograma;
+**Nome Completo:** Ana Paula Nascimento Silva- rm552513
+**Responsabilidade no Projeto:** criação do controller , cronograma;
 
-*Nome Completo:* Calina Thalya Santana da Silva- rm552523
-*Responsabilidade no Projeto:* criação do service , documentação/organização no github
+**Nome Completo:** Calina Thalya Santana da Silva- rm552523
+**Responsabilidade no Projeto:** criação do service , documentação/organização no github
 
-*Nome Completo:* Geovana Ribeiro Domingos Silva- rm99646
-*Responsabilidade no Projeto:* criação do DTO e organização do banco de dados
+**Nome Completo:** Geovana Ribeiro Domingos Silva- rm99646
+**Responsabilidade no Projeto:** criação do DTO e organização do banco de dados
 
-*Nome Completo:* Leonardo Camargo Lucena- rm552537
-*Responsabilidade no Projeto:* criação das classes modelos e do repository
+**Nome Completo:** Leonardo Camargo Lucena- rm552537
+**Responsabilidade no Projeto:** criação das classes modelos e do repository
 
-*Nome Completo:* Nathan Nunes Calsonari- rm552539
-*Responsabilidade no Projeto:* Configuração do projeto, das dependências, do funcionamento e da documentação
+**Nome Completo:** Nathan Nunes Calsonari- rm552539
+**Responsabilidade no Projeto:** Configuração do projeto, das dependências, do funcionamento e da documentação
 
 # Instruções de Execução
 Para executar o programa, é necessário ter o Intellij ou Eclipse instalado em seu computador. Em seguida, precisa carregar as dependências e depois é necessário fazer os testes ou em algum navegador ou no postman
