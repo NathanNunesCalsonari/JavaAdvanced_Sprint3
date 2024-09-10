@@ -25,10 +25,13 @@ Em seguida, precisa selecionar qual método vai querer, GET, POST, PUT, DELETE
 Assista ao vídeo de apresentação da proposta tecnológica, público-alvo e problemas que a aplicação se propõe a solucionar aqui: https://www.youtube.com/watch?v=TsUd9z82e2E.
 
 # Atualizaçôes:
-No atual projeto, atualizamos alguns erros que tinha no programa, como não conseguir acessar o banco de dados e cadastrar algum produto. Além disso foi acrescentado o CRUD do produto, pois nossa ideia visa utilizar
-ele também para que as empresas consigam registrar seu produto para ter os feedbacks dos clientes. 
+No projeto em andamento, foram realizadas correções significativas, incluindo a resolução de problemas relacionados ao acesso ao banco de dados e ao cadastro de produtos. Além disso, foi implementado um sistema completo de CRUD (Create, Read, Update, Delete) para o gerenciamento de produtos. Essa funcionalidade foi integrada com o intuito de permitir que as empresas registrem seus produtos e recebam feedback dos clientes.
 
-Vale mencionar também que houve uma mudança no banco de dados e os diagramas de classe foram atualizados.
+O projeto agora conta também com a implementação do Spring MVC, oferecendo uma interface web interativa, desenvolvida utilizando Thymeleaf para a renderização de templates.
+
+![Captura de tela 2024-09-09 214145](https://github.com/user-attachments/assets/322a0dea-0535-45d4-ad1a-a09c65633ad7)
+
+![Captura de tela 2024-09-09 214204](https://github.com/user-attachments/assets/0fd6499c-ecec-412a-9f17-5951ab0efbfb)
 
 # Imagem dos Diagramas de classe:
 ![image](https://github.com/NathanNunesCalsonari/JavaAdvanced_Sprint2/assets/130010914/c787ba51-d6e9-449f-82c0-b08eab6d44bf)
