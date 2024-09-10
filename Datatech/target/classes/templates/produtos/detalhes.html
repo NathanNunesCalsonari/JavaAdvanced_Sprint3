@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Detalhes do Produto</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+  <h1>Detalhes do Produto</h1>
+  <p>ID: <span th:text="${produto.id}"></span></p>
+  <p>Nome do Produto: <span th:text="${produto.nomeProduto}"></span></p>
+  <p>Valor: <span th:text="${produto.valorProduto}"></span></p>
+  <a class="button-link" href="/produtos/listar">Voltar à Lista</a>
+</div>
+</body>
+</html>

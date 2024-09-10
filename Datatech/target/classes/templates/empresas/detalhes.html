@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalhes da Empresa</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Detalhes da Empresa</h1>
+    <p>ID: <span th:text="${empresa.id}"></span></p>
+    <p>Nome da Empresa: <span th:text="${empresa.nomeEmpresa}"></span></p>
+    <p>Nome Fantasia: <span th:text="${empresa.nomeFantasia}"></span></p>
+    <p>CNPJ: <span th:text="${empresa.cnpj}"></span></p>
+    <a class="button-link" href="/empresas/listar">Voltar à Lista</a>
+</div>
+</body>
+</html>

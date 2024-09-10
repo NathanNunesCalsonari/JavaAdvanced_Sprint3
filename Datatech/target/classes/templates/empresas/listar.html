@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Empresas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Empresas Disponíveis</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome da Empresa</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="empresa : ${empresas}">
+            <td th:text="${empresa.id}"></td>
+            <td th:text="${empresa.nomeEmpresa}"></td>
+            <td>
+                <a th:href="@{/empresas/{id}(id=${empresa.id})}">Detalhes</a>
+                <a th:href="@{/empresas/editar/{id}(id=${empresa.id})}">Editar</a>
+                <a th:href="@{/empresas/deletar/{id}(id=${empresa.id})}" th:onclick="return confirm('Tem certeza que deseja deletar?');">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="button-link" href="/empresas/cadastrar">Cadastrar Nova Empresa</a>
+</div>
+</body>
+</html>

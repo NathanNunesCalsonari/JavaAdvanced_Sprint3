@@ -32,12 +32,12 @@ public class EmpresaDTO {
         this.nomeEmpresa = nomeEmpresa;
     }
 
-    public String getEnderecoEmpresa() {
+    public String getNomeFantasia() {
         return nomeFantasia;
     }
 
-    public void setEnderecoEmpresa(String enderecoEmpresa) {
-        this.nomeFantasia = enderecoEmpresa;
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
     public String getCnpj() {

@@ -2,16 +2,15 @@ package br.com.fiap.datatech.controller;
 
 import br.com.fiap.datatech.dto.ProdutoDTO;
 import br.com.fiap.datatech.service.ProdutoService;
-
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/produtos")
 public class ProdutoController {
 
@@ -19,38 +18,56 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping("/listar")
-    public List<ProdutoDTO> listarProdutos() {
-        return produtoService.listarTodosProdutos();
+    public String listarProdutos(Model model) {
+        List<ProdutoDTO> produtos = produtoService.listarTodosProdutos();
+        model.addAttribute("produtos", produtos);
+        return "produtos/listar";
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProdutoDTO> obterProdutoPorId(@PathVariable(value = "id") Long produtoId) {
-        Optional<ProdutoDTO> produto = produtoService.encontrarProdutoPorId(produtoId);
-        return produto.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @PostMapping("/cadastrar")
-    public ResponseEntity<ProdutoDTO> cadastrarProduto(@Valid @RequestBody ProdutoDTO produtoDTO) {
-        ProdutoDTO novoProduto = produtoService.salvarProduto(produtoDTO);
-        return ResponseEntity.ok().body(novoProduto);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<ProdutoDTO> atualizarProduto(@PathVariable(value = "id") Long produtoId,
-                                                       @Valid @RequestBody ProdutoDTO produtoDTO) {
+    public String obterProdutoPorId(@PathVariable(value = "id") Long produtoId, Model model) {
         Optional<ProdutoDTO> produto = produtoService.encontrarProdutoPorId(produtoId);
         if (produto.isPresent()) {
-            produtoDTO.setId(produtoId); // Ensure the ID is set for updating
-            ProdutoDTO produtoAtualizado = produtoService.salvarProduto(produtoDTO);
-            return ResponseEntity.ok(produtoAtualizado);
+            model.addAttribute("produto", produto.get());
+            return "produtos/detalhes";
         } else {
-            return ResponseEntity.notFound().build();
+            return "error/404"; // Redireciona para uma página de erro 404 se o produto não for encontrado
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarProduto(@PathVariable(value = "id") Long produtoId) {
+    @GetMapping("/cadastrar")
+    public String mostrarFormularioCadastro(Model model) {
+        model.addAttribute("produtoDTO", new ProdutoDTO());
+        return "produtos/cadastrar";
+    }
+
+    @PostMapping("/cadastrar")
+    public String cadastrarProduto(@ModelAttribute ProdutoDTO produtoDTO) {
+        produtoService.salvarProduto(produtoDTO);
+        return "redirect:/produtos/listar";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String mostrarFormularioEdicao(@PathVariable(value = "id") Long produtoId, Model model) {
+        Optional<ProdutoDTO> produto = produtoService.encontrarProdutoPorId(produtoId);
+        if (produto.isPresent()) {
+            model.addAttribute("produtoDTO", produto.get());
+            return "produtos/editar";
+        } else {
+            return "error/404"; // Redireciona para uma página de erro 404 se o produto não for encontrado
+        }
+    }
+
+    @PostMapping("/editar/{id}")
+    public String atualizarProduto(@PathVariable(value = "id") Long produtoId, @ModelAttribute ProdutoDTO produtoDTO) {
+        produtoDTO.setId(produtoId);
+        produtoService.salvarProduto(produtoDTO);
+        return "redirect:/produtos/listar";
+    }
+
+    @PostMapping("/deletar/{id}")
+    public String deletarProduto(@PathVariable(value = "id") Long produtoId) {
         produtoService.deletarProduto(produtoId);
-        return ResponseEntity.ok().build();
+        return "redirect:/produtos/listar";
     }
 }
