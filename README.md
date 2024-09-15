@@ -45,8 +45,8 @@ O projeto agora conta também com a implementação do Spring MVC, oferecendo um
 ![image](https://github.com/NathanNunesCalsonari/JavaAdvanced_Sprint2/assets/130010914/4b612fc8-8035-4ee5-b3b9-03d147687718)
 
 # Endpoints:
-° GET /empresa/listar
-° GET /empresa/{id}
+* ° GET /empresa/listar *
+* ° GET /empresa/{id} *
 ° POST /empresa/cadastrar
 ° PUT /empresa/{id}
 ° DELETE /empresa/{id}
