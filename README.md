@@ -30,7 +30,7 @@ No projeto em andamento, foram realizadas correções significativas, incluindo 
 O projeto agora conta também com a implementação do Spring MVC, oferecendo uma interface web interativa, desenvolvida utilizando Thymeleaf para a renderização de templates.
 
 # Link do funcionamento do projeto
-https://www.youtube.com/watch?v=AK-qhKhhKmw
+[https://www.youtube.com/watch?v=AK-qhKhhKmw](https://www.youtube.com/watch?v=SqUqBhpirTU)
 
 ![image](https://github.com/user-attachments/assets/57272769-4288-4b93-a761-03a40467fb1d)
 
