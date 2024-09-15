@@ -3,6 +3,7 @@ package br.com.fiap.datatech.service;
 import br.com.fiap.datatech.dto.EmpresaDTO;
 import br.com.fiap.datatech.entity.Empresa;
 import br.com.fiap.datatech.repository.EmpresaRepository;
+import jakarta.annotation.PostConstruct;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,23 @@ public class EmpresaService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @PostConstruct
+    public void init() {
+        // Configurando o ModelMapper para mapear explicitamente os campos
+        modelMapper.typeMap(EmpresaDTO.class, Empresa.class)
+                .addMappings(mapper -> {
+                    mapper.map(EmpresaDTO::getNomeEmpresa, Empresa::setNomeEmpresa);
+                    mapper.map(EmpresaDTO::getNomeFantasia, Empresa::setNomeFantasia);
+                    mapper.map(EmpresaDTO::getCnpj, Empresa::setCnpj);
+                });
+        modelMapper.typeMap(Empresa.class, EmpresaDTO.class)
+                .addMappings(mapper -> {
+                    mapper.map(Empresa::getNomeEmpresa, EmpresaDTO::setNomeEmpresa);
+                    mapper.map(Empresa::getNomeFantasia, EmpresaDTO::setNomeFantasia);
+                    mapper.map(Empresa::getCnpj, EmpresaDTO::setCnpj);
+                });
+    }
 
     public List<EmpresaDTO> listarTodasEmpresas() {
         List<Empresa> empresas = empresaRepository.findAll();

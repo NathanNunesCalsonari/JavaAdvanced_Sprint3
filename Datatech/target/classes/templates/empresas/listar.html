@@ -22,7 +22,10 @@
             <td>
                 <a th:href="@{/empresas/{id}(id=${empresa.id})}">Detalhes</a>
                 <a th:href="@{/empresas/editar/{id}(id=${empresa.id})}">Editar</a>
-                <a th:href="@{/empresas/deletar/{id}(id=${empresa.id})}" th:onclick="return confirm('Tem certeza que deseja deletar?');">Deletar</a>
+                <form th:action="@{/empresas/deletar/{id}(id=${empresa.id})}" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar?');">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit">Deletar</button>
+                </form>
             </td>
         </tr>
         </tbody>

@@ -25,13 +25,13 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    public String obterProdutoPorId(@PathVariable(value = "id") Long produtoId, Model model) {
+    public String obterProdutoPorId(@PathVariable("id") Long produtoId, Model model) {
         Optional<ProdutoDTO> produto = produtoService.encontrarProdutoPorId(produtoId);
         if (produto.isPresent()) {
             model.addAttribute("produto", produto.get());
             return "produtos/detalhes";
         } else {
-            return "error/404"; // Redireciona para uma página de erro 404 se o produto não for encontrado
+            return "error/404";
         }
     }
 
@@ -48,26 +48,29 @@ public class ProdutoController {
     }
 
     @GetMapping("/editar/{id}")
-    public String mostrarFormularioEdicao(@PathVariable(value = "id") Long produtoId, Model model) {
+    public String mostrarFormularioEdicao(@PathVariable("id") Long produtoId, Model model) {
         Optional<ProdutoDTO> produto = produtoService.encontrarProdutoPorId(produtoId);
         if (produto.isPresent()) {
             model.addAttribute("produtoDTO", produto.get());
             return "produtos/editar";
         } else {
-            return "error/404"; // Redireciona para uma página de erro 404 se o produto não for encontrado
+            return "error/404";
         }
     }
 
     @PostMapping("/editar/{id}")
-    public String atualizarProduto(@PathVariable(value = "id") Long produtoId, @ModelAttribute ProdutoDTO produtoDTO) {
+    public String atualizarProduto(@PathVariable("id") Long produtoId, @ModelAttribute ProdutoDTO produtoDTO) {
         produtoDTO.setId(produtoId);
         produtoService.salvarProduto(produtoDTO);
         return "redirect:/produtos/listar";
     }
 
+    // Atualizado para @DeleteMapping
     @PostMapping("/deletar/{id}")
-    public String deletarProduto(@PathVariable(value = "id") Long produtoId) {
+    public String deletarProduto(@PathVariable("id") Long produtoId) {
         produtoService.deletarProduto(produtoId);
         return "redirect:/produtos/listar";
     }
+
+
 }

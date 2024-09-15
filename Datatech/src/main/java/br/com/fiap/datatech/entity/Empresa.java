@@ -1,36 +1,37 @@
 package br.com.fiap.datatech.entity;
 
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "T_TECH_EMPRESA")
 public class Empresa {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_EMPRESA")
     private Long id;
 
     @Column(name = "NM_EMPRESA", nullable = false)
-    private String nome;
+    private String nomeEmpresa;
 
     @Column(name = "NM_FANTASIA", nullable = true)
     private String nomeFantasia;
 
     @Column(name = "NR_CNPJ", nullable = false, unique = true)
-    private String cnpj; 
+    private String cnpj;
 
-    public Empresa(Long novoId, String nome, String nomeFantasia, String cnpj) {
-        this.id = novoId;
-        this.nome = nome;
+    public Empresa() {
+    }
+
+    public Empresa(Long id, String nomeEmpresa, String nomeFantasia, String cnpj) {
+        this.id = id;
+        this.nomeEmpresa = nomeEmpresa;
         this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
     }
 
-    public Empresa() {
 
-    }
-
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -39,12 +40,12 @@ public class Empresa {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeEmpresa() {
+        return nomeEmpresa;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeEmpresa(String nomeEmpresa) {
+        this.nomeEmpresa = nomeEmpresa;
     }
 
     public String getNomeFantasia() {

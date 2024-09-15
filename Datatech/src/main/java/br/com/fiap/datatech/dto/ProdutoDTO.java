@@ -1,15 +1,16 @@
 package br.com.fiap.datatech.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class ProdutoDTO {
 
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "O nome do produto é obrigatório")
     private String nomeProduto;
 
-    @NotBlank
+    @NotNull(message = "O valor do produto é obrigatório")
     private Double valorProduto;
 
     public Long getId() {
