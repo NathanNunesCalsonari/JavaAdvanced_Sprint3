@@ -47,12 +47,12 @@ O projeto agora conta também com a implementação do Spring MVC, oferecendo um
 # Endpoints:
 * ° GET /empresa/listar *
 * ° GET /empresa/{id} *
-° POST /empresa/cadastrar
-° PUT /empresa/{id}
-° DELETE /empresa/{id}
+* ° POST /empresa/cadastrar *
+* ° PUT /empresa/{id} *
+* ° DELETE /empresa/{id} *
 
-° GET /produto/listar
-° GET /produto/{id}
-° POST /produto/cadastrar
-° PUT /produto/{id}
-° DELETE /produto/{id}
+* ° GET /produto/listar *
+* ° GET /produto/{id} *
+* ° POST /produto/cadastrar *
+* ° PUT /produto/{id} *
+* ° DELETE /produto/{id} *
