@@ -29,9 +29,10 @@ No projeto em andamento, foram realizadas correções significativas, incluindo 
 
 O projeto agora conta também com a implementação do Spring MVC, oferecendo uma interface web interativa, desenvolvida utilizando Thymeleaf para a renderização de templates.
 
-![Captura de tela 2024-09-09 214145](https://github.com/user-attachments/assets/322a0dea-0535-45d4-ad1a-a09c65633ad7)
+# Link do funcionamento do projeto
+https://www.youtube.com/watch?v=AK-qhKhhKmw
 
-![Captura de tela 2024-09-09 214204](https://github.com/user-attachments/assets/0fd6499c-ecec-412a-9f17-5951ab0efbfb)
+![image](https://github.com/user-attachments/assets/ec0eae6d-6466-436e-aa92-6836d22d5a20)
 
 # Imagem dos Diagramas de classe:
 ![image](https://github.com/NathanNunesCalsonari/JavaAdvanced_Sprint2/assets/130010914/c787ba51-d6e9-449f-82c0-b08eab6d44bf)
